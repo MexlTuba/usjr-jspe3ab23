@@ -7,13 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class College extends Model
 {
-    public function departments()
-    {
-        return $this->hasMany(Department::class, 'deptcollid');
-    }
+    protected $table = 'colleges';
+    protected $primaryKey = 'collid';
 
     public function programs()
     {
         return $this->hasMany(Program::class, 'progcollid');
+    }
+
+    public function departments()
+    {
+        return $this->hasMany(Department::class, 'deptcollid');
     }
 }

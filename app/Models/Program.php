@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Program extends Model
 {
+    protected $table = 'programs';
+    protected $primaryKey = 'progid';
+
     public function college()
     {
         return $this->belongsTo(College::class, 'progcollid');
@@ -14,6 +17,6 @@ class Program extends Model
 
     public function department()
     {
-        return $this->belongsTo(Department::class, 'progdeptid');
+        return $this->belongsTo(Department::class, 'progcolldeptid');
     }
 }

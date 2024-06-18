@@ -19,8 +19,8 @@
             <td>{{ $student->studid }}</td>
             <td>{{ $student->studfirstname }}</td>
             <td>{{ $student->studlastname }}</td>
-            <td>{{ $student->program->progfullname }}</td>
-            <td>{{ $student->college->collfullname }}</td>
+            <td>{{ $student->program->progfullname ?? 'N/A' }}</td>
+            <td>{{ $student->college->collfullname ?? 'N/A' }}</td>
             <td><a href="{{ url('/show/student/' . $student->studid) }}" class="btn btn-info">Show</a></td>
         </tr>
         @endforeach
